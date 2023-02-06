@@ -1,0 +1,26 @@
+---
+title: "MVHW.1"
+author: "Naga Asritha"
+date: "2023-02-06"
+output: html_document
+---
+
+```{r}
+library(readr)
+Bumpus_sparrows <- read_csv("/Users/asrithanarra/Desktop/Bumpus_sparrows.csv")
+spa <- Bumpus_sparrows
+spa
+spa<- as.data.frame(spa)
+#Column Means
+colMeans(subset(spa, Survivorship == "NS")[,c("Total_length","Alar_extent","L_beak_head","L_humerous","L_keel_sternum")])
+colMeans(subset(spa, Survivorship == "S")[,c("Total_length","Alar_extent","L_beak_head","L_humerous","L_keel_sternum")])
+
+#Correlation
+cor(subset(spa, Survivorship == "NS")[,c("Total_length","Alar_extent","L_beak_head","L_humerous","L_keel_sternum")])
+cor(subset(spa, Survivorship == "S")[,c("Total_length","Alar_extent","L_beak_head","L_humerous","L_keel_sternum")])
+
+#Covariance
+cov(subset(spa, Survivorship == "NS")[,c("Total_length","Alar_extent","L_beak_head","L_humerous","L_keel_sternum")])
+cov(subset(spa, Survivorship == "S")[,c("Total_length","Alar_extent","L_beak_head","L_humerous","L_keel_sternum")])
+```
+
